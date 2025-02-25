@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Usuario principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="user-container">
+    <img [src]="imageurl" class="profile-img">
+
+    <div class="info-row">
+      <span class="label">Nombre:</span>
+      <span class="value">{{ nombre }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Edad:</span>
+      <span class="value">{{ edad }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Cédula:</span>
+      <span class="value">{{ cedula }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Correo:</span>
+      <span class="value">{{ correo }}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="label">Teléfono:</span>
+      <span class="value">{{ telefono }}</span>
+    </div>
+
+    <div class="info-row">
+      <ion-button expand="block" color="danger">Editar Perfil</ion-button> 
+    </div>
+  </div>
+</ion-content>

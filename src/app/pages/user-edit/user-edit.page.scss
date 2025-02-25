@@ -1,0 +1,61 @@
+/* user.page.scss */
+
+/* Fondo general con márgenes alrededor del contenido */
+ion-content {
+  --background: #f4f4f4; /* Fondo gris claro */
+  padding: 0 16px 16px 16px; /* Márgenes alrededor del contenido (top, right, bottom, left) */
+}
+
+/* Contenedor principal de la información */
+.user-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px; /* Reducción del padding para que el contenido sea más compacto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 16px; /* Margen superior para separar del encabezado */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px; /* Establecemos un tamaño máximo para que el contenedor no se expanda demasiado */
+}
+
+/* Estilo para la imagen del perfil */
+.profile-img {
+  width: 100px; /* Reducimos el tamaño para que sea un poco más compacto */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px; /* Centrado y pequeño margen inferior */
+  border: 2px solid #f56a79; /* Borde rojo alrededor de la imagen */
+}
+
+/* Estilo para cada fila de información */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0; /* Reducimos el padding para hacer las filas más compactas */
+  border-bottom: 1px solid #f56a79; /* Línea roja entre las filas */
+}
+
+.info-row:last-child {
+  border-bottom: none; /* Elimina la línea en la última fila */
+}
+
+/* Estilo para las etiquetas de la información (nombre, edad, etc.) */
+.label {
+  font-weight: bold;
+  color: #333;
+  font-size: 15px; /* Reducimos ligeramente el tamaño de fuente */
+}
+
+/* Estilo para los valores de la información */
+.value {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Espaciado entre las filas */
+.info-row + .info-row {
+  margin-top: 6px; /* Reducimos el margen entre filas */
+}  

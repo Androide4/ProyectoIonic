@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="user-container">
+    <img [src]="imageurl" class="profile-img">
+
+    <div class="info-row">
+      <ion-input 
+        type="text" 
+        id="nombre" 
+        [(ngModel)]="nombre" 
+        label="Nombre"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="{{nombre}}">
+      </ion-input>
+    </div>
+    
+    <div class="info-row">
+      <ion-input 
+        type="date" 
+        id="edad" 
+        [(ngModel)]="fechaNacimiento" 
+        label="Fecha Nacimiento"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="{{fechaNacimiento}}">
+      </ion-input>
+    </div>
+    
+    <div class="info-row">
+      <ion-input 
+        type="text" 
+        id="cedula" 
+        [(ngModel)]="cedula" 
+        label="Cédula"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="{{cedula}}">
+      </ion-input>
+    </div>
+    
+    <div class="info-row">
+      <ion-input 
+        type="email" 
+        id="correo" 
+        [(ngModel)]="correo" 
+        label="Correo"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="{{correo}}">
+      </ion-input>
+    </div>
+    
+    <div class="info-row">
+      <ion-input 
+        type="tel" 
+        id="telefono" 
+        [(ngModel)]="telefono" 
+        label="Teléfono"
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="{{telefono}}">
+      </ion-input>
+    </div>
+    
+    <div class="info-row">
+      <ion-button (click)="enviarDatos()" color="danger">Guardar cambios</ion-button>
+    </div>
+  </div>
+</ion-content>
