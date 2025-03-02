@@ -9,7 +9,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Perfil', url: 'user', icon: 'mail' },
     { title: 'Editar Perfil', url: 'user-edit', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
+    { title: 'Productos', url: 'product', icon: 'heart' },
     { title: 'Archived', url: '/folder/archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/spam', icon: 'warning' },

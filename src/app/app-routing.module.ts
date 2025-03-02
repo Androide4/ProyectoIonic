@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'user-edit',
     loadChildren: () => import('./pages/user-edit/user-edit.module').then( m => m.UserEditPageModule)
+  },
+  {
+    path: 'product',
+    loadChildren: () => import('./pages/product/product.module').then( m => m.ProductPageModule)
   }
 ];
 

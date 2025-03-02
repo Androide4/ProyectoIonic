@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div class="user-container">
+      <div *ngIf="mostrarLista; else noExisteLista">
+        <ion-card *ngFor="let lista of listadosProductos">
+          <img [src]="lista.image" />
+          <ion-card-header>
+            <ion-card-title>{{ lista.title }}</ion-card-title>
+            <ion-card-subtitle>{{ lista.category }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            {{ lista.description }}
+            <br>
+            Tiene un valor de $ <b>{{ lista.price }}</b>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <ng-template #noExisteLista>
+        <p>No products available. products found.</p>
+      </ng-template>
+    </div>
+</ion-content>

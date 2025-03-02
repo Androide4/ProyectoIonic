@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-user-edit',
   templateUrl: './user-edit.page.html',
   styleUrls: ['./user-edit.page.scss'],
-  standalone: false,
+  standalone: false,//colocar esta linea para evitar error del cannot get 
 })
 export class UserEditPage implements OnInit {
   imageurl: string = 'https://cloudfront-us-east-1.images.arcpublishing.com/copesa/J7A3JSAAC5G2ZP2BJNTM53NPAA.jpg';
