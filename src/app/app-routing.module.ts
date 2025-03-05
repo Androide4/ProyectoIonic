@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+//rutas para navegar entre diferentes vistas o componentes de tu aplicación
 const routes: Routes = [
   {
     path: 'user/:id',

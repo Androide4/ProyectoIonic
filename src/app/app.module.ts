@@ -6,7 +6,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //Para utulizar el NgModel de two way binding (19/02/2025)
 
 @NgModule({
   declarations: [AppComponent],

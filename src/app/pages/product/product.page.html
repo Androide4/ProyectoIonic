@@ -4,7 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
+
+  <!--Bloque donde se utliza las directivas IF y FOR, renderizando los valores del TS (02/03/2025)-->
     <div class="user-container">
       <div *ngIf="mostrarLista; else noExisteLista">
         <ion-card *ngFor="let lista of listadosProductos">
@@ -25,4 +28,5 @@
         <p>No products available. products found.</p>
       </ng-template>
     </div>
+
 </ion-content>

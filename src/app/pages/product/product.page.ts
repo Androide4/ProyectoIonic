@@ -10,9 +10,9 @@ import { Product } from 'src/app/interfaces/product.model';//se importa la inter
 export class ProductPage implements OnInit {
 
   mostrarLista: Boolean = true;
-  listadosProductos: Product [] = []; //declara e inicializa una lista de objetos 
+  listadosProductos: Product [] = []; //declara e inicializa una lista de objetos (02/03/2025)
 
-
+  // como tenia el objeto(28/02/2025)
   listaProductos = [
     {
       "id": 1,
@@ -30,6 +30,7 @@ export class ProductPage implements OnInit {
 
   constructor() { }
 
+  //asignar valor a los atributos de la interfaz en la lista de objetos que inicialice(02/03/2025)
   ngOnInit() {
     this.listadosProductos = [
       {
