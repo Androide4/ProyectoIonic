@@ -1,0 +1,79 @@
+/* Ajustes en el contenedor que envuelve todas las tarjetas */
+.user-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crear 3 columnas de igual tamaño */
+    gap: 16px; /* Espaciado entre las tarjetas */
+    padding: 16px; /* Padding en el contenedor */
+    background-color: #f4f4f4; /* Fondo gris claro para todo el contenedor */
+    max-width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    grid-template-rows: auto; /* Asegura que las filas tengan un tamaño automático */
+  }
+  
+  /* En pantallas grandes, mantener 3 columnas */
+  @media (min-width: 1024px) {
+    .user-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+  }
+  
+  /* En pantallas medianas, 2 columnas */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .user-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+  }
+  
+  /* En pantallas pequeñas, 1 columna */
+  @media (max-width: 768px) {
+    .user-container {
+      grid-template-columns: 1fr; /* 1 columna */
+    }
+  }
+  
+  /* Estilos para el contenido del ion-card */
+  ion-card {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 16px; /* Espaciado entre tarjetas */
+    padding: 12px; /* Padding dentro de cada tarjeta */
+    overflow: hidden; /* Asegura que el contenido dentro de la tarjeta no se desborde */
+    width: 100%; /* Asegura que ocupe todo el espacio disponible dentro de la celda del grid */
+    max-width: 300px; /* Limita el ancho máximo de la tarjeta */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total de la tarjeta */
+  }
+  
+  /* Estilos para la imagen dentro de cada tarjeta */
+  ion-card img {
+    width: 100%; /* Ocupa el 100% del ancho de la tarjeta */
+    height: auto; /* Mantiene la relación de aspecto original */
+    max-height: 180px; /* Limita la altura máxima */
+    border-radius: 8px; /* Bordes redondeados */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+    margin-bottom: 12px; /* Espaciado debajo de la imagen */
+  }
+  
+  /* Títulos y subtítulos dentro del encabezado de la tarjeta */
+  ion-card-header {
+    padding: 8px 0; /* Reducimos el padding para hacer el contenido más compacto */
+  }
+  
+  ion-card-title {
+    font-size: 16px; /* Reducir tamaño del título */
+    color: #333; /* Color del texto del título */
+    font-weight: bold; /* Hacemos el título más destacado */
+  }
+  
+  ion-card-subtitle {
+    font-size: 12px; /* Reducir tamaño de subtítulo */
+    color: #777; /* Color más suave para el subtítulo */
+  }
+  
+  /* Contenido de la tarjeta */
+  ion-card-content {
+    font-size: 14px; /* Tamaño de fuente más pequeño para el contenido */
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Mejora la legibilidad del contenido */
+    margin-top: 8px; /* Espaciado superior entre el título y el contenido */
+  }

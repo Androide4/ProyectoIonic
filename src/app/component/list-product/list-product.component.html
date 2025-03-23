@@ -1,0 +1,21 @@
+  <div class="user-container">
+    <div *ngIf="mostrarLista; else noExisteLista">
+      <ion-card *ngFor="let lista of productos">
+        <img [src]="lista.image" />
+        <ion-card-header>
+          <ion-card-title>{{ lista.title }}</ion-card-title>
+          <ion-card-subtitle>{{ lista.category }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{ lista.description }}
+          <br />
+          Tiene un valor de $ <b>{{ lista.price }}</b>
+        </ion-card-content>
+        <ion-button>{{ buttonText }}</ion-button> 
+      </ion-card>
+    </div>
+
+    <ng-template #noExisteLista>
+      <p>No products available. products found.</p>
+    </ng-template>
+  </div>
