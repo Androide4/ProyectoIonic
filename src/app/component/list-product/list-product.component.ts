@@ -9,7 +9,7 @@ import { Product } from 'src/app/interfaces/product.model';//se importa la inter
 })
 export class ListProductComponent  implements OnInit {
   @Input() productos: Product[] = [];
-  @Input() buttonText: string = '';
+  @Input() botonCompra: boolean = true;
 
   mostrarLista: boolean = true;
 

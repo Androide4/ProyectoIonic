@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>creation-product</ion-title>
+    <ion-title>Creacion producto</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,4 +9,10 @@
   (messageEvent)="crearProducto($event)">
 
   </app-registration-form>
+  <br>
+
+  <ion-toolbar>
+    <ion-title>Productos Creados</ion-title>
+  </ion-toolbar>
+  <app-list-product [productos]="listadosProductos"></app-list-product>
 </ion-content>
