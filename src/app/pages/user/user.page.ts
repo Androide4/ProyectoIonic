@@ -24,8 +24,8 @@ export class UserPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.persona = new Persona(2, "Eider")//se construye el objeto de la clase, el this se refiere aun atributo estricto de la clase
-    let persona: Persona = new Persona(2, "Stefania");
+    this.persona = new Persona(2, "Santiago")//se construye el objeto de la clase, el this se refiere aun atributo estricto de la clase
+    let persona: Persona = new Persona(3, "Stefania");
     persona.saludar();//se ejecuta la clase
 
     //objeto tipado de una interfaz, que cumpla con una estructura definida

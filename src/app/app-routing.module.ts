@@ -22,6 +22,10 @@ const routes: Routes = [
   },  {
     path: 'shopping-cart',
     loadChildren: () => import('./pages/shopping-cart/shopping-cart.module').then( m => m.ShoppingCartPageModule)
+  },
+  {
+    path: 'creation-product',
+    loadChildren: () => import('./pages/creation-product/creation-product.module').then( m => m.CreationProductPageModule)
   }
 
 ];

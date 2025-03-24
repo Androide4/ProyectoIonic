@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>creation-product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-registration-form
+  (messageEvent)="crearProducto($event)">
+
+  </app-registration-form>
+</ion-content>

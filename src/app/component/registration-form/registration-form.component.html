@@ -1,0 +1,60 @@
+<ion-content>
+  <form [formGroup]="productForm">
+    <!-- Campo ID -->
+    <ion-item>
+      <ion-label position="stacked">ID</ion-label>
+      <ion-input type="number" formControlName="id"></ion-input>
+    </ion-item>
+
+    <!-- Campo Título -->
+    <ion-item>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+
+    <!-- Campo Precio -->
+    <ion-item>
+      <ion-label position="stacked">Precio</ion-label>
+      <ion-input type="number" formControlName="price"></ion-input>
+    </ion-item>
+
+    <!-- Campo Descripción -->
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <!-- Campo Categoría -->
+    <ion-item>
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select formControlName="category">
+        <ion-select-option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Campo Imagen -->
+    <ion-item>
+      <ion-label position="stacked">URL de la Imagen</ion-label>
+      <ion-input type="url" formControlName="image"></ion-input>
+    </ion-item>
+
+    <!-- Campo Calificación -->
+    <ion-item>
+      <ion-label position="stacked">Calificación</ion-label>
+      <ion-input type="number" formControlName="ratingRate"></ion-input>
+    </ion-item>
+
+    <!-- Campo Número de Reseñas -->
+    <ion-item>
+      <ion-label position="stacked">Número de Reseñas</ion-label>
+      <ion-input type="number" formControlName="ratingCount"></ion-input>
+    </ion-item>
+
+    <!-- Botón de Enviar -->
+    <ion-button expand="block" (click)="guardarProducto()">
+      Guardar Producto
+    </ion-button>
+  </form>
+</ion-content>
