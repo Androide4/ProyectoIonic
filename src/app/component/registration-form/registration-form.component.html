@@ -1,33 +1,33 @@
 <ion-content>
-  <form [formGroup]="productForm">
-    <!-- Campo id -->
+  <form>
+    <!-- Campo ID -->
     <ion-item>
       <ion-label position="stacked">ID</ion-label>
-      <ion-input type="number" formControlName="id"></ion-input>
+      <ion-input type="number" [(ngModel)]="product.id" name="id"></ion-input>
     </ion-item>
 
-    <!-- Campo Titulo -->
+    <!-- Campo Título -->
     <ion-item>
-      <ion-label position="stacked">titulo</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label position="stacked">Título</ion-label>
+      <ion-input type="text" [(ngModel)]="product.title" name="title"></ion-input>
     </ion-item>
 
     <!-- Campo Precio -->
     <ion-item>
-      <ion-label position="stacked">precio</ion-label>
-      <ion-input type="number" formControlName="price"></ion-input>
+      <ion-label position="stacked">Precio</ion-label>
+      <ion-input type="number" [(ngModel)]="product.price" name="price"></ion-input>
     </ion-item>
 
-    <!-- Campo Descripcion -->
+    <!-- Campo Descripción -->
     <ion-item>
-      <ion-label position="stacked">descripcion</ion-label>
-      <ion-textarea formControlName="description"></ion-textarea>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="product.description" name="description"></ion-textarea>
     </ion-item>
 
-    <!-- Campo Categoria -->
+    <!-- Campo Categoría -->
     <ion-item>
-      <ion-label position="stacked">categoria</ion-label>
-      <ion-select formControlName="category">
+      <ion-label position="stacked">Categoría</ion-label>
+      <ion-select [(ngModel)]="product.category" name="category">
         <ion-select-option *ngFor="let category of categories" [value]="category">
           {{ category }}
         </ion-select-option>
@@ -36,23 +36,23 @@
 
     <!-- Campo Imagen -->
     <ion-item>
-      <ion-label position="stacked">URL de la imagen</ion-label>
-      <ion-input type="url" formControlName="image"></ion-input>
+      <ion-label position="stacked">URL de la Imagen</ion-label>
+      <ion-input type="url" [(ngModel)]="product.image" name="image"></ion-input>
     </ion-item>
 
-    <!-- Campo Calificacion -->
+    <!-- Campo Calificación -->
     <ion-item>
-      <ion-label position="stacked">calificacion</ion-label>
-      <ion-input type="number" formControlName="ratingRate"></ion-input>
+      <ion-label position="stacked">Calificación</ion-label>
+      <ion-input type="number" [(ngModel)]="product.rating.rate" name="ratingRate"></ion-input>
     </ion-item>
 
-    <!-- Campo Nimero de Reseñas -->
+    <!-- Campo Número de Reseñas -->
     <ion-item>
-      <ion-label position="stacked">numero de reseñas</ion-label>
-      <ion-input type="number" formControlName="ratingCount"></ion-input>
+      <ion-label position="stacked">Número de Reseñas</ion-label>
+      <ion-input type="number" [(ngModel)]="product.rating.count" name="ratingCount"></ion-input>
     </ion-item>
 
-    <!-- Boton de Enviar -->
+    <!-- Botón de Enviar -->
     <ion-button expand="block" (click)="guardarProducto()">
       Guardar Producto
     </ion-button>

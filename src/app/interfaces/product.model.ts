@@ -1,3 +1,5 @@
+import {Rating} from "../interfaces/rating.model";
+
 export interface Product{
     id: number;           // Identificador del producto (02/03/2025)
     title: string;        // Título del producto (02/03/2025)
@@ -6,8 +8,4 @@ export interface Product{
     category: string;     // Categoría del producto (02/03/2025)
     image: string;        // URL de la imagen del producto (02/03/2025)
     rating: Rating;       // Objeto que contiene la calificación y el conteo (02/03/2025)
-}
-export interface Rating {
-    rate: number;  // Calificación del producto (02/03/2025)
-    count: number; // Número de reseñas (02/03/2025)
 }

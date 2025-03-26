@@ -14,23 +14,39 @@ export class RegistrationFormComponent  implements OnInit {
 
     categories: string[] = ['Electrónica', 'Ropa', 'Hogar', 'Juguetes'];
 
-    productForm: FormGroup = new FormGroup({
-      id: new FormControl(null),
-      title: new FormControl(''),
-      price: new FormControl(null),
-      description: new FormControl(''),
-      category: new FormControl(''),
-      image: new FormControl(''),
-      ratingRate: new FormControl(null),
-      ratingCount: new FormControl(null),
-    });
-
-  ngOnInit() {}
-
-  guardarProducto() {
-    this.messageEvent.emit(this.productForm.value);
-    alert(" Producto guardado ");
-    this.productForm.reset();
+    product: Product = {
+      id: null,
+      title: '',
+      price: null,
+      description: '',
+      category: '',
+      image: '',
+      rating: {
+        rate: null,
+        count: null,
+      },
+    };
+  
+    ngOnInit() {}
+  
+    guardarProducto() {
+      this.messageEvent.emit(this.product);
+      alert('Producto guardado');
+      this.resetForm();
+    }
+  
+    resetForm() {
+      this.product = {
+        id: null,
+        title: '',
+        price: null,
+        description: '',
+        category: '',
+        image: '',
+        rating: {
+          rate: null,
+          count: null,
+        },
+      };
+    }
   }
-
-}

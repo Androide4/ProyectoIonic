@@ -4,11 +4,12 @@ import {RegistrationFormComponent} from "./registration-form/registration-form.c
 import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
 import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [ListProductComponent,RegistrationFormComponent],
     exports: [ListProductComponent,RegistrationFormComponent],
-    imports: [CommonModule, IonicModule, ReactiveFormsModule ],
+    imports: [CommonModule, IonicModule, FormsModule ],
 })
 
 export class ComponentsModule{}
