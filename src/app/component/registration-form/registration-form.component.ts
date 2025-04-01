@@ -12,7 +12,7 @@ export class RegistrationFormComponent  implements OnInit {
     @Input() productos: Product[] = [];
     @Output() messageEvent = new EventEmitter<Product>();
 
-    categories: string[] = ['Electrónica', 'Ropa', 'Hogar', 'Juguetes'];
+    categories: string[] = ['Electronica', 'Ropa', 'Hogar', 'Juguetes'];
 
     product: Product = {
       id: null,
