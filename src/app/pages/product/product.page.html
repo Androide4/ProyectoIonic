@@ -4,7 +4,18 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Muestra el componente hijo solo si la API respondio exitosamente -->
+  <ng-container *ngIf="mostrandoProductos; else sinProductos">
+    <app-list-product
+      [productos]="listadosProductos"
+      [botonCompra]="true">
+    </app-list-product>
+  </ng-container>
 
-<ion-content [fullscreen]="true">
-  <app-list-product [productos]="listadosProductos" [botonCompra]=""></app-list-product>
+  <ng-template #sinProductos>
+    <ion-text color="medium">
+      <p>No hay productos disponibles.</p>
+    </ion-text>
+  </ng-template>
 </ion-content>

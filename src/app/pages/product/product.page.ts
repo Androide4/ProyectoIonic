@@ -12,15 +12,17 @@ export class ProductPage implements OnInit {
 
 
   listadosProductos: Product [] = []; //declara e inicializa una lista de objetos (02/03/2025)
+  mostrandoProductos = false;
 
-
-  constructor(private creacion: CreatingListService) { }
+  constructor(private creatingListService: CreatingListService) { }
 
   //asignar valor a los atributos de la interfaz en la lista de objetos que inicialice(02/03/2025)
   //muestra los productos que se llaman desde el servicio (3/4/2025)
   ngOnInit() {
-    this.creacion.guardarProducto();
-    this.listadosProductos = this.creacion.mostrarProducto();
+    // Al iniciar, solicita la lista y actualiza la flag de visualizacion
+    this.creatingListService.cargarApiHttp().subscribe(productos => {
+      this.listadosProductos = productos;
+      this.mostrandoProductos = this.creatingListService.productosCargados;
+    });
   }
-
 }

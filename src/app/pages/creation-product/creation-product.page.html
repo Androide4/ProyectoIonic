@@ -3,10 +3,8 @@
     <ion-title>Creacion producto</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
-  <app-registration-form
-  (messageEvent)="crearProducto($event)">
+  <app-registration-form (messageEvent)="crearProducto($event)">
   </app-registration-form>
 
   <br>
@@ -14,7 +12,9 @@
   <ion-toolbar>
     <ion-title>Productos Creados</ion-title>
   </ion-toolbar>
-  <app-list-product [productos]="listadosProductos">
-  </app-list-product>
 
+  <app-list-product
+    [productos]="listadosProductos"
+    [botonCompra]="false">
+  </app-list-product>
 </ion-content>

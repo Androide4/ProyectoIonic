@@ -10,18 +10,20 @@ import { CreatingListService } from 'src/app/services/creating-list.service';
 })
 export class CreationProductPage implements OnInit {
 
-    listadosProductos: Product [] = [];
+  listadosProductos: Product[] = [];
 
-  constructor(private creacion: CreatingListService) { }
+  constructor(private creacion: CreatingListService) {}
 
   ngOnInit() {
-    this.creacion.guardarProducto();
-    this.listadosProductos = this.creacion.mostrarProducto();
+    this.creacion.cargarApiHttp().subscribe(() => {
+      this.listadosProductos = this.creacion.obtenerProductos();
+    });
   }
 
   crearProducto(product: Product) {
-    this.creacion.agregarProducto(product); // ✔️ Correcto
-    console.log("Producto guardado:", product);
+    this.creacion.postProducto(product).subscribe((nuevoProducto) => {
+      console.log("Producto insertado y cargado:", nuevoProducto);
+      this.listadosProductos = this.creacion.obtenerProductos();
+    });
   }
-  
 }
