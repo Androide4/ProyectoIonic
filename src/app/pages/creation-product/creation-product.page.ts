@@ -15,15 +15,17 @@ export class CreationProductPage implements OnInit {
   constructor(private creacion: CreatingListService) {}
 
   ngOnInit() {
-    this.creacion.cargarApiHttp().subscribe(() => {
-      this.listadosProductos = this.creacion.obtenerProductos();
-    });
+
   }
 
   crearProducto(product: Product) {
-    this.creacion.postProducto(product).subscribe((nuevoProducto) => {
-      console.log("Producto insertado y cargado:", nuevoProducto);
-      this.listadosProductos = this.creacion.obtenerProductos();
+    if (!product.title || !product.price) {
+      alert('Título y precio son obligatorios');
+      return;
+    }
+
+    this.creacion.postProducto(product).subscribe(nuevo => {
+      console.log('Producto agregado y persistente en esta sesión', nuevo);
     });
   }
 }

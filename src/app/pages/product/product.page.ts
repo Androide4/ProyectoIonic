@@ -20,9 +20,10 @@ export class ProductPage implements OnInit {
   //muestra los productos que se llaman desde el servicio (3/4/2025)
   ngOnInit() {
     // Al iniciar, solicita la lista y actualiza la flag de visualizacion
-    this.creatingListService.cargarApiHttp().subscribe(productos => {
-      this.listadosProductos = productos;
-      this.mostrandoProductos = this.creatingListService.productosCargados;
-    });
+      this.creatingListService.cargarApiHttp().subscribe(productos => {
+        this.listadosProductos = productos;
+        this.mostrandoProductos = this.creatingListService.productosCargados;
+      });
+    
   }
 }
