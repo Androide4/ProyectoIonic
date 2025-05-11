@@ -24,6 +24,11 @@ export class ProductPage implements OnInit {
         this.listadosProductos = productos;
         this.mostrandoProductos = this.creatingListService.productosCargados;
       });
-    
+   }
+   
+  agregarAlCarrito(producto: Product) {
+    this.creatingListService.agregarAlCarrito(producto);
   }
+
+
 }

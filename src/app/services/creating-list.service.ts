@@ -11,6 +11,7 @@ export class CreatingListService {
 
   private apiUrl = 'https://fakestoreapi.com/products';
   listadosProductos: Product[] = [];
+  carrito: Product[] = [];
   productosCargados = false;
 
   constructor(private http: HttpClient) {}
@@ -45,9 +46,22 @@ export class CreatingListService {
       })
     );
   }
-  
-  
 
+
+
+  agregarAlCarrito(producto: Product): void {
+  if (!this.carrito.find(p => p.id === producto.id)) {
+    this.carrito.push(producto);
+  }
+}
+
+obtenerCarrito(): Product[] {
+  return this.carrito;
+}
+
+eliminarDelCarrito(productoId: number): void {
+  this.carrito = this.carrito.filter(p => p.id !== productoId);
+}
   
   
   

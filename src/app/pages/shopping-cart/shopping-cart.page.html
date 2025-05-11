@@ -5,5 +5,5 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-list-product [productos]="listadosProductos" [botonCompra]="false"> </app-list-product>
+  <app-list-product [productos]="listadosProductos" [botonCompra]="false" (eliminar)="eliminarProducto($event)"> </app-list-product>
 </ion-content>

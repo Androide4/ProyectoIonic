@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product.model';//se importa la interfaz
 
 @Component({
@@ -10,7 +10,8 @@ import { Product } from 'src/app/interfaces/product.model';//se importa la inter
 export class ListProductComponent  implements OnInit {
   @Input() productos: Product[] = [];
   @Input() botonCompra: boolean = true;
-
+  @Output() agregar = new EventEmitter<Product>();
+  @Output() eliminar = new EventEmitter<number>();
   mostrarLista: boolean = true;
 
   constructor() { }

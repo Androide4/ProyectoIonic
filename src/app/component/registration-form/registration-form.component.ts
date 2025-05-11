@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Product } from 'src/app/interfaces/product.model';//se importa la interfaz
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Product } from 'src/app/interfaces/product.model';
 
 @Component({
   selector: 'app-registration-form',
@@ -8,45 +8,42 @@ import { Product } from 'src/app/interfaces/product.model';//se importa la inter
   styleUrls: ['./registration-form.component.scss'],
   standalone: false,
 })
-export class RegistrationFormComponent  implements OnInit {
-    @Input() productos: Product[] = [];
-    @Output() messageEvent = new EventEmitter<Product>();
+export class RegistrationFormComponent implements OnInit {
+  @Input() productos: Product[] = [];
+  @Output() messageEvent = new EventEmitter<Product>();
 
-    categories: string[] = ['Electronica', 'Ropa', 'Hogar', 'Juguetes'];
+  categories: string[] = ['Electronica', 'Ropa', 'Hogar', 'Juguetes'];
 
-    product: Product = {
-      id: null,
-      title: '',
-      price: null,
-      description: '',
-      category: '',
-      image: '',
-      rating: {
-        rate: null,
-        count: null,
-      },
-    };
-  
-    ngOnInit() {}
-  
-    guardarProducto() {
-      this.messageEvent.emit(this.product);
+  productForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.productForm = this.fb.group({
+      id: [null, Validators.required],
+      title: ['', Validators.required],
+      price: [null, Validators.required],
+      description: [''],
+      category: [''],
+      image: [''],
+      rating: this.fb.group({
+        rate: [null],
+        count: [null],
+      }),
+    });
+  }
+
+  guardarProducto() {
+    if (this.productForm.valid) {
+      this.messageEvent.emit(this.productForm.value);
       alert('Producto guardado');
       this.resetForm();
-    }
-  
-    resetForm() {
-      this.product = {
-        id: null,
-        title: '',
-        price: null,
-        description: '',
-        category: '',
-        image: '',
-        rating: {
-          rate: null,
-          count: null,
-        },
-      };
+    } else {
+      alert('Por favor llena todos los campos requeridos');
     }
   }
+
+  resetForm() {
+    this.productForm.reset();
+  }
+}

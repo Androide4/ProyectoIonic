@@ -11,9 +11,9 @@
           <br />
           Tiene un valor de $ <b>{{ lista.price }}</b>
         </ion-card-content>
-        <ion-button *ngIf="this.botonCompra">Añadir carrito</ion-button>
-        <ion-button *ngIf="!this.botonCompra">Eliminar producto</ion-button> 
-      </ion-card>
+          <ion-button *ngIf="botonCompra" (click)="agregar.emit(lista)">Añadir carrito</ion-button>
+          <ion-button *ngIf="!botonCompra" (click)="eliminar.emit(lista.id)">Eliminar producto</ion-button>
+     </ion-card>
     </div>
 
     <ng-template #noExisteLista>

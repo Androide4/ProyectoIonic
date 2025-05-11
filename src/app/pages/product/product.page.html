@@ -9,7 +9,8 @@
   <ng-container *ngIf="mostrandoProductos; else sinProductos">
     <app-list-product
       [productos]="listadosProductos"
-      [botonCompra]="true">
+      [botonCompra]="true"
+      (agregar)="agregarAlCarrito($event)">
     </app-list-product>
   </ng-container>
 
